@@ -1,0 +1,5 @@
+id,user,book_id,returned
+l1,alice123,b2,False
+l2,bob_smith,b3,True
+l3,carol89,b1,False
+l4,david_k,b4,False

@@ -1,0 +1,5 @@
+id,title,author_id,available
+b1,1984,a1,True
+b2,Harry Potter and the Philosopher's Stone,a2,False
+b3,Pride and Prejudice,a3,True
+b4,The Adventures of Tom Sawyer,a4,True
