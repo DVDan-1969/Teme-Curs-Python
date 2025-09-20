@@ -10,10 +10,10 @@ if __name__ == '__main__':
         'nume': 'Ion',
         'varsta': '25'
         }
-response = requests.get(url, params=parametri)
-data = response.json()
-print("Cod de status:", response.status_code)
-print("URL complet generat:", data['url'])
-print("Parametrii primiți de server:")
-for cheie, valoare in data['args'].items():
-    print(f"  {cheie}: {valoare}")
+    response = requests.get(url, params=parametri)
+    data = response.json()
+    print("Cod de status:", response.status_code)
+    print("URL complet generat:", data['url'])
+    print("Parametrii primiți de server:")
+    for cheie, valoare in data['args'].items():
+        print(f"  {cheie}: {valoare}")

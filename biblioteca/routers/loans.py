@@ -1,11 +1,11 @@
 from fastapi import APIRouter
 from fastapi import Request, HTTPException
 
-router = APIRouter(prefix="/authors", tags=["authors"])
+router = APIRouter(prefix="/loans", tags=["loans"])
 
 
 
-@router.post("/loans/{id}")
+@router.post("/{id}")
 def borrow_book(id: str, request: Request):
     data = request.json()
     username = data.get('username')
