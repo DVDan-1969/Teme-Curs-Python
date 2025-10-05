@@ -2,8 +2,8 @@
 import csv
 
 from fastapi import APIRouter,HTTPException
-# from biblioteca.models import Author
-from biblioteca.models import Author
+
+from models import Author
 
 router = APIRouter(prefix="/authors", tags=["authors"])
 
@@ -36,6 +36,7 @@ def create_author(author:Author):
         csv_dict_writer = csv.DictWriter(csvfile, fieldnames=field_names)
         csv_dict_writer.writerow({"id":lines,"name":author.name})
         return "Added author successfully"
+
 
 
 

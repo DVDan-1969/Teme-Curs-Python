@@ -1,5 +1,9 @@
-username,password
-alice123,parola123
-bob_smith,abcde
-carol89,pass789
-david_k,xyz123
+id,username,password
+1,alice123,123
+2,michael68,abcd
+3,ana65,nico
+4,dan55,electro
+5,sofia56,MyPass789
+6,mihai,Secure123
+7,andrei,IloveCats
+8,calin56,Pa$$9

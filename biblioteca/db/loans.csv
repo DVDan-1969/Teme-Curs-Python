@@ -1,5 +1,9 @@
 id,user,book_id,returned
-l1,alice123,b2,False
-l2,bob_smith,b3,True
-l3,carol89,b1,False
-l4,david_k,b4,False
+1,alice123,1,True
+2,michael68,4,False
+3,ana65,7,True
+4,dan55,6,False
+5,sofia56,9,True
+6,mihai,5,True
+7,andrei,4,True
+8,calin56,1,True

@@ -2,7 +2,7 @@
 import csv
 
 from fastapi import APIRouter,HTTPException
-from biblioteca.models import Book
+from models import Book
 
 
 router = APIRouter(prefix="/books", tags=["books"])
@@ -56,8 +56,10 @@ def create_book(book:Book):
         csvfile.seek(0)
         lines= len(csvfile.readlines())
         csv_dict_writer=csv.DictWriter(csvfile,fieldnames=field_names)
-        csv_dict_writer.writerow({"id":lines,"title":book.title,"author_name":book.author_name,"available":True})
+        csv_dict_writer.writerow({"id":lines,"title":book.title,"author_id": book.author_id,"available":True})
         return "Added book successfully"
+
+
 
 
 

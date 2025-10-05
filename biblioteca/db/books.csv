@@ -1,5 +1,10 @@
-id,title,author_name,available
-1,1984,George Orwell,True
-2,Harry Potter and the Philosopher's Stone,J.K.Rowling,False
-3,Pride and Prejudice,Jane Austen,True
-4,The Adventures of Tom Sawyer,Mark Twain,True
+id,title,author_id,available
+1,1984,1,true
+2,Harry Potter,2,false
+3,Tom Sawyer,4,true
+4,Pride and Prejudice,3,true
+5,Hamlet,5,false
+6,Mrs Dalloway,9,false
+7,War and Peace,6,true
+8,Oliver Twist,7,true
+9,Die Verwandlung,8,false
