@@ -15,11 +15,11 @@ class Book(BaseModel):
 class User(BaseModel):
     username: str
     password: str
-    id:str
+
 
 class Loans(BaseModel):
     id: str
-    user: str
+    username: str
     book_id: str
     returned: bool
 

@@ -1,4 +1,4 @@
-id,user,book_id,returned
+id,username,book_id,returned
 1,alice123,1,True
 2,michael68,4,False
 3,ana65,7,True

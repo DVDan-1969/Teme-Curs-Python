@@ -3,6 +3,7 @@ import csv
 from fastapi import APIRouter,HTTPException
 
 from models import User
+from pydantic import BaseModel
 
 router = APIRouter(prefix="/users", tags=["users"])
 
@@ -36,16 +37,35 @@ def create_user(user:User):
         return "Added user successfully"
 
 
+class Users(BaseModel):
+    username: str
+    password: str
 
+# @router.post('/login')
+# def login(user: User):
+#     field_names = ["id","username", "password"]
+#     with open('db/users.csv', "r", newline="", encoding="utf-8") as csvfile:
+#         csv_dict_reader = csv.DictReader(csvfile, fieldnames=field_names)
+#         for record in csv_dict_reader:
+#             if record["username"] == user.username:
+#                 if record["password"] == user.password:
+#                     return {"message": "Login successful", "user": record["username"]}
+#             else:
+#                 raise HTTPException(status_code=401, detail="Incorrect password")
+#         raise HTTPException(status_code=404, detail="User not found")
 @router.post('/login')
 def login(user: User):
-    field_names = ["username", "password"]
+
+
+    field_names = ["id", "username", "password"]
     with open('db/users.csv', "r", newline="", encoding="utf-8") as csvfile:
         csv_dict_reader = csv.DictReader(csvfile, fieldnames=field_names)
+
         for record in csv_dict_reader:
             if record["username"] == user.username:
                 if record["password"] == user.password:
                     return {"message": "Login successful", "user": record["username"]}
                 else:
                     raise HTTPException(status_code=401, detail="Incorrect password")
+
         raise HTTPException(status_code=404, detail="User not found")
