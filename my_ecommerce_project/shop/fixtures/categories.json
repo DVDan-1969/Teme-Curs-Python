@@ -1,0 +1,27 @@
+
+[
+  {
+    "model": "shop.category",
+    "pk": 1,
+    "fields": {
+      "name": "Laptopuri",
+      "slug": "laptopuri"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 2,
+    "fields": {
+      "name": "Smartphone-uri",
+      "slug": "smartphone-uri"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 3,
+    "fields": {
+      "name": "Căști",
+      "slug": "casti"
+    }
+  }
+]

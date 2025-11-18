@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de produse</title>
+    <style>
+        .product {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 250px;
+        }
+        img {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lista de produse</h1>
+
+<div class="products-list">
+
+    {% if products %}
+        {% for product in products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+                {% endif %}
+
+                <p>Preț: {{ product.price }} RON</p>
+                <p>{{ product.description }}</p>
+
+                <a href="{% url 'shop:product_detail' product.slug %}">Vezi detalii</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Nu există produse disponibile.</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
+
+

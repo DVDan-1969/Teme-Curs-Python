@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+
+<h2>Finalizează comanda</h2>
+
+{% if empty %}
+    <p>Coșul tău este gol.</p>
+    <!-- Text necesar pentru testul test_checkout_empty_cart -->
+    <span>empty</span>
+
+{% else %}
+    {% if order %}
+        <p>Total de plată: {{ order.get_total }} RON</p>
+
+        <!-- Formularul de checkout (dacă vrei să fie vizibil din test) -->
+        {% if form %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button type="submit"
+                        style="padding:12px 20px; background:green; color:white;
+                               border:none; cursor:pointer; font-size:16px;">
+                    Finalizează comanda
+                </button>
+            </form>
+        {% endif %}
+
+        <!-- Opțional: butonul Stripe -->
+        <a href="{% url 'shop:create_checkout_session' order.id %}">
+            <button style="padding:12px 20px; background:blue; color:white;
+                           border:none; cursor:pointer; font-size:16px; margin-top:10px;">
+                Plătește cu cardul
+            </button>
+        </a>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>
+
+

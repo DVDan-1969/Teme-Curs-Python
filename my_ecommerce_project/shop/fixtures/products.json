@@ -1,0 +1,29 @@
+
+[
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop Dell XPS 13",
+      "slug": "laptop-dell-xps-13",
+      "description": "Un laptop puternic și portabil cu ecran de 13 inch.",
+      "price": "1500.00",
+      "category": 1,
+      "image": "C:Users/viore/Pictures/laptop_dell_xps_13.jpg",
+      "available": true
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+      "name": "Smartphone Samsung Galaxy S21",
+      "slug": "smartphone-samsung-galaxy-s21",
+      "description": "Smartphone de top cu camera de 108MP și ecran Dynamic AMOLED.",
+      "price": "999.00",
+      "category": 2,
+      "image": "C:/Users/viore/Pictures/galaxy_s21.jpg",
+      "available": true
+    }
+  }
+]

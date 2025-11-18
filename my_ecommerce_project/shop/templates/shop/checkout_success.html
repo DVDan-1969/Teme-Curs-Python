@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comandă finalizată</title>
+</head>
+<body>
+
+<h2>Comanda ta a fost trimisă!</h2>
+
+<p>Număr comandă: {{ order.id }}</p>
+<p>Total: {{ order.get_total }} RON</p>
+
+<a href="{% url 'shop:product_list' %}">Înapoi la magazin</a>
+
+</body>
+</html>

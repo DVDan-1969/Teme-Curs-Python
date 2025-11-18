@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+    <h2>Coșul tău</h2>
+
+    {% if order %}
+        <ul>
+        {% for item in order.items.all %}
+            <li>{{ item.product.name }} — {{ item.quantity }} x {{ item.product.price }} RON</li>
+        {% endfor %}
+        </ul>
+
+        <p>Total: {{ order.get_total }} RON</p>
+
+        <form action="{% url 'shop:clear_cart' %}" method="post" style="margin-bottom: 15px;">
+            {% csrf_token %}
+            <button type="submit" style="background:red; color:white; padding:8px 12px; border:none; cursor:pointer;">
+                Golire coș
+            </button>
+        </form>
+
+        <a href="{% url 'shop:checkout' %}">Finalizează comanda</a>
+
+    {% else %}
+        <p>Coșul este gol.</p>
+    {% endif %}
+</body>
+</html>
